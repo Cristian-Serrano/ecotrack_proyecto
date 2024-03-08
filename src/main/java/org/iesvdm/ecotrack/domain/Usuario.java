@@ -5,6 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "usuario")
@@ -23,4 +27,8 @@ public class Usuario {
     private String contrasenia;
     private String email;
     private boolean administrador;
+
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Set<Actividad> actividades;
 }

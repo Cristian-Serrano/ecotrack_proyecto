@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "ecotrack",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

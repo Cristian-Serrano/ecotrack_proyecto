@@ -26,4 +26,25 @@ public class ActividadService {
     public Optional<Actividad> one(long id){
         return actividadRepository.findById(id);
     }
+
+    public Actividad replace(Long id, Actividad actividad){
+        return this.actividadRepository.findById(id)
+                .map( p -> (id.equals(actividad.getId())  ?
+                        this.actividadRepository.save(actividad) : null))
+                .get();
+        /*.orElseThrow(() -> new UsuarioNotFoundException(id));*/
+    }
+
+    public void delete(Long id) {
+        this.actividadRepository.findById(id).map(p -> {
+                    this.actividadRepository.delete(p);
+                    return p;})
+                .get();
+        /*.orElseThrow(() -> new UsuarioNotFoundException(id));*/
+    }
+
+    public Actividad save(Actividad actividad){
+        return this.actividadRepository.save(actividad);
+    }
+
 }

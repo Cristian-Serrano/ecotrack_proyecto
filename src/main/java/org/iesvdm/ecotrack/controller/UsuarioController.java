@@ -20,13 +20,13 @@ public class UsuarioController {
 
     @GetMapping(value={"","/"},params ={"!buscar","!ordenar"})
     public Page<Usuario> all() {
-        log.info("Accediendo a todas las categorias");
+        log.info("Accediendo a todos los usuarios");
         return this.usuarioService.findAll(0,10);
     }
 
     @GetMapping(value={"/{id}","/{id}/"})
     public Optional<Usuario> one(@PathVariable("id") Long id) {
-        log.info("Accediendo a todas las categorias");
+        log.info("Accediendo a todos los usuarios");
         return this.usuarioService.one(id);
     }
 }

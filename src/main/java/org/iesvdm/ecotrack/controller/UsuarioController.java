@@ -29,4 +29,9 @@ public class UsuarioController {
         log.info("Accediendo a todos los usuarios");
         return this.usuarioService.one(id);
     }
+
+    @PostMapping({"","/"})
+    public Usuario newCategoria(@RequestBody Usuario categoria) {
+        return this.usuarioService.save(categoria);
+    }
 }

@@ -30,4 +30,9 @@ public class ActividadController {
         log.info("Accediendo a todas las actividades");
         return this.actividadService.one(id);
     }
+
+    @PostMapping({"","/"})
+    public Actividad newActividad(@RequestBody Actividad actividad) {
+        return this.actividadService.save(actividad);
+    }
 }

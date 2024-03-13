@@ -31,7 +31,7 @@ public class UsuarioController {
     }
 
     @PostMapping({"","/"})
-    public Usuario newCategoria(@RequestBody Usuario categoria) {
-        return this.usuarioService.save(categoria);
+    public Usuario newUsuario(@RequestBody Usuario usuario) {
+        return this.usuarioService.save(usuario);
     }
 }

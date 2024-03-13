@@ -29,4 +29,9 @@ public class Actividad {
     @JsonIgnore
     @ToString.Exclude
     private Usuario usuario;
+
+    @ManyToOne
+    @JsonIgnore
+    @ToString.Exclude
+    private GraficoDeEstadisticas graficoDeEstadisticas;
 }

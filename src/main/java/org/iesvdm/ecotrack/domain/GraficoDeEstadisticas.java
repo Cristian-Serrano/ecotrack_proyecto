@@ -1,27 +1,25 @@
 package org.iesvdm.ecotrack.domain;
 
-import org.iesvdm.ecotrack.domain.Actividad;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
-@Table(name = "estadistica")
+@Table(name = "grafico_de_estadisticas")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Estadistica {
+public class GraficoDeEstadisticas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_estadistica")
+    @Column(name = "id_grafico")
     private long id;
-    private Double toneladasEmitidas;
 
     @OneToMany
-    private Actividad actividad;
+    private List<Actividad> actividades;
 }

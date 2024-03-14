@@ -18,10 +18,11 @@ public class Actividad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_actividad")
+    @EqualsAndHashCode.Include
     private long id;
 
-    private BigDecimal combustibleUtilizado;
-    private BigDecimal factorDeEmisionCombustible;
+    private Double combustibleUtilizado;
+    private Double factorDeEmisionCombustible;
     private String unidadFactorDeEmision;
     private Date fecha;
 

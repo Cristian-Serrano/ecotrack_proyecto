@@ -1,10 +1,7 @@
 package org.iesvdm.ecotrack.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -18,6 +15,7 @@ public class GraficoDeEstadisticas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_grafico")
+    @EqualsAndHashCode.Include
     private long id;
 
     @OneToMany

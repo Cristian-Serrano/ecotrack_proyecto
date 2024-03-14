@@ -1,0 +1,21 @@
+meta {
+  name: actividad
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/actividades
+  body: json
+  auth: none
+}
+
+body:json {
+    {
+      "id": 2,
+      "combustibleUtilizado": 1,
+      "factorDeEmisionCombustible": 17.2,
+      "unidadFactorDeEmision": "kgCO2/L",
+      "fecha": "2024-03-14T08:40:53.372+00:00"
+    }
+}

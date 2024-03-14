@@ -1,0 +1,23 @@
+meta {
+  name: usuario
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/usuarios
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 4,
+    "nombre_de_usuario": "pila4",
+    "nombre_de_pila": "alberto4",
+    "contrasenia": "123",
+    "email": "email@email.com",
+    "administrador": false,
+    "actividades": []
+  }
+}

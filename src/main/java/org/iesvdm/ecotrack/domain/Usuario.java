@@ -1,10 +1,7 @@
 package org.iesvdm.ecotrack.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -21,6 +18,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
+    @EqualsAndHashCode.Include
     private long id;
     private String nombre_de_usuario;
     private String nombre_de_pila;

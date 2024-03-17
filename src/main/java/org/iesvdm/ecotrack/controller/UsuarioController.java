@@ -13,7 +13,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/usuarios")
+@RequestMapping("/v1/api/usuarios")
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
@@ -21,7 +21,7 @@ public class UsuarioController {
     @GetMapping(value={"","/"},params ={"!buscar","!ordenar"})
     public Page<Usuario> all() {
         log.info("Accediendo a todos los usuarios");
-        return this.usuarioService.findAll(0,10);
+        return this.usuarioService.findAll(0,3);
     }
 
     @GetMapping(value={"/{id}","/{id}/"})

@@ -14,7 +14,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/actividades")
+@RequestMapping("/v1/api/actividades")
 public class ActividadController {
     @Autowired
     private ActividadService actividadService;
@@ -22,7 +22,7 @@ public class ActividadController {
     @GetMapping(value={"","/"}/*,params ={"!buscar","!ordenar"}*/)
     public Page<Actividad> all() {
         log.info("Accediendo a todas las actividades");
-        return this.actividadService.findAll(0,10);
+        return this.actividadService.findAll(0,3);
     }
 
     @GetMapping(value={"/{id}","/{id}/"})

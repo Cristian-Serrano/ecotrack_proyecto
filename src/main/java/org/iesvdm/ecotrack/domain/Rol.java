@@ -8,26 +8,23 @@ import org.hibernate.annotations.OnDeleteAction;
 import java.util.Set;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "rol")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Usuario {
+public class Rol {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
     @EqualsAndHashCode.Include
     private long id;
-    private String nombre_de_usuario;
-    private String nombre_de_pila;
-    private String contrasenia;
-    private String email;
+    private String nombre;
 
     @ManyToMany
-    private Set<Rol> roles;
+    private Set<Usuario> usuarios;
 
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)

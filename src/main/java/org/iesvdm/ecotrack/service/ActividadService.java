@@ -42,6 +42,20 @@ public class ActividadService {
                 .get();
     }
 
+    /**
+     * devuelve el valor y las unidades: 14,3 kg/L
+     * @param id
+     * @return
+     */
+    public String factorEmision(Long id){
+        Optional<Actividad> actividadOpt = this.actividadRepository.findById(id);
+        if(actividadOpt.isPresent()){
+            Actividad actividad = actividadOpt.get();
+            return actividad.getFactorDeEmisionCombustible() + actividad.getUnidadFactorDeEmision();
+        }
+        return "";
+    }
+
     public Actividad save(Actividad actividad){
         return this.actividadRepository.save(actividad);
     }

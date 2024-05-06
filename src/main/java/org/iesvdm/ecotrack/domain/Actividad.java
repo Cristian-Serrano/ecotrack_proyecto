@@ -34,5 +34,10 @@ public class Actividad {
     @ManyToOne
     @JsonIgnore
     @ToString.Exclude
+    private Rol rol;
+
+    @ManyToOne
+    @JsonIgnore
+    @ToString.Exclude
     private GraficoDeEstadisticas graficoDeEstadisticas;
 }

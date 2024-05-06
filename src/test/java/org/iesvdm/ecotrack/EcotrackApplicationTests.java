@@ -1,8 +1,8 @@
 package org.iesvdm.ecotrack;
 
-import org.iesvdm.ecotrack.domain.Actividad;
+import org.iesvdm.ecotrack.domain.DefinicionActividad;
 import org.iesvdm.ecotrack.domain.Usuario;
-import org.iesvdm.ecotrack.service.ActividadService;
+import org.iesvdm.ecotrack.service.DefinicionActividadService;
 import org.iesvdm.ecotrack.service.UsuarioService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ class EcotrackApplicationTests {
 	private UsuarioService usuarioService;
 
 	@Autowired
-	private ActividadService actividadService;
+	private DefinicionActividadService actividadService;
 
 	@Test
 	void contextLoads() {
@@ -34,12 +34,12 @@ class EcotrackApplicationTests {
 		this.usuarioService.save(usuario3);
 
 
-		Actividad actividad1 = new Actividad(1,1d,12.2d,"kgCO2/L",fecha,usuario1,null);
-		Actividad actividad2 = new Actividad(2,1d,17.2d,"kgCO2/L",fecha,usuario2,null);
-		Actividad actividad3 = new Actividad(3,1d,21.2d,"kgCO2/L",fecha,usuario3,null);
-		this.actividadService.save(actividad1);
-		this.actividadService.save(actividad2);
-		this.actividadService.save(actividad3);
+		DefinicionActividad definicionActividad1 = new DefinicionActividad(1,1d,12.2d,"kgCO2/L",fecha,usuario1,null,null);
+		DefinicionActividad definicionActividad2 = new DefinicionActividad(2,1d,17.2d,"kgCO2/L",fecha,usuario2,null,null);
+		DefinicionActividad definicionActividad3 = new DefinicionActividad(3,1d,21.2d,"kgCO2/L",fecha,usuario3,null,null);
+		this.actividadService.save(definicionActividad1);
+		this.actividadService.save(definicionActividad2);
+		this.actividadService.save(definicionActividad3);
 	}
 
 	@Test

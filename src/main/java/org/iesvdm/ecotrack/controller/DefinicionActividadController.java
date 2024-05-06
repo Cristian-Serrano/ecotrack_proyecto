@@ -1,12 +1,11 @@
 package org.iesvdm.ecotrack.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.iesvdm.ecotrack.domain.Actividad;
-import org.iesvdm.ecotrack.domain.Usuario;
-import org.iesvdm.ecotrack.service.ActividadService;
-import org.iesvdm.ecotrack.service.UsuarioService;
+import org.iesvdm.ecotrack.domain.DefinicionActividad;
+import org.iesvdm.ecotrack.service.DefinicionActividadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -15,24 +14,31 @@ import java.util.Optional;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/v1/api/actividades")
-public class ActividadController {
+public class DefinicionActividadController {
     @Autowired
-    private ActividadService actividadService;
+    private DefinicionActividadService actividadService;
 
     @GetMapping(value={"","/"}/*,params ={"!buscar","!ordenar"}*/)
-    public Page<Actividad> all() {
+    public Page<DefinicionActividad> all() {
         log.info("Accediendo a todas las actividades");
         return this.actividadService.findAll(0,3);
     }
 
     @GetMapping(value={"/{id}","/{id}/"})
-    public Optional<Actividad> one(@PathVariable("id") Long id) {
+    public Optional<DefinicionActividad> one(@PathVariable("id") Long id) {
         log.info("Accediendo a todas las actividades");
         return this.actividadService.one(id);
     }
 
     @PostMapping({"","/"})
-    public Actividad newActividad(@RequestBody Actividad actividad) {
-        return this.actividadService.save(actividad);
+    public DefinicionActividad newActividad(@RequestBody DefinicionActividad definicionActividad) {
+        return this.actividadService.save(definicionActividad);
+    }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    public void deleteActividad(@PathVariable("id") Long id) {
+        this.actividadService.delete(id);
     }
 }

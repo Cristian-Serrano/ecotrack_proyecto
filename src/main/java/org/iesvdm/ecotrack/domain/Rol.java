@@ -26,7 +26,7 @@ public class Rol {
     @ManyToMany
     private Set<Usuario> usuarios;
 
-    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "rol", fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Set<Actividad> actividades;
+    private Set<DefinicionActividad> actividades;
 }

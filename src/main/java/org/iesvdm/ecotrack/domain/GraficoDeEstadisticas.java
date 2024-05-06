@@ -18,6 +18,6 @@ public class GraficoDeEstadisticas {
     @EqualsAndHashCode.Include
     private long id;
 
-    @OneToMany
-    private List<Actividad> actividades;
+    @OneToMany(mappedBy = "graficoDeEstadisticas")
+    private List<DefinicionActividad> actividades;
 }

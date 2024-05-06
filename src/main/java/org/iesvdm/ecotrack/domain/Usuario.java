@@ -26,10 +26,10 @@ public class Usuario {
     private String contrasenia;
     private String email;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "usuarios")
     private Set<Rol> roles;
 
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Set<Actividad> actividades;
+    private Set<DefinicionActividad> actividades;
 }

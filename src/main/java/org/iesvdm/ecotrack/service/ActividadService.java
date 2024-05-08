@@ -1,7 +1,5 @@
 package org.iesvdm.ecotrack.service;
 
-package org.iesvdm.ecotrack.service;
-
 import org.iesvdm.ecotrack.domain.DefinicionActividad;
 import org.iesvdm.ecotrack.repository.DefinicionActividadRepository;
 import org.springframework.beans.factory.annotation.Autowired;

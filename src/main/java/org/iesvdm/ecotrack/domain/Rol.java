@@ -26,6 +26,10 @@ public class Rol {
     @ManyToMany
     private Set<Usuario> usuarios;
 
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private ERol rol;
+
     @OneToMany(mappedBy = "rol", fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<DefinicionActividad> actividades;

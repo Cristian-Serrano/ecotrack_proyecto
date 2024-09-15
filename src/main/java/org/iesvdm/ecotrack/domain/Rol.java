@@ -21,7 +21,6 @@ public class Rol {
     @Column(name = "id_usuario")
     @EqualsAndHashCode.Include
     private long id;
-    private String nombre;
 
     @ManyToMany
     private Set<Usuario> usuarios;
@@ -29,8 +28,4 @@ public class Rol {
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
     private ERol rol;
-
-    @OneToMany(mappedBy = "rol", fetch = FetchType.EAGER)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Set<DefinicionActividad> actividades;
 }

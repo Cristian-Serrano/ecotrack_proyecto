@@ -33,7 +33,7 @@ public class Usuario {
     @NotBlank
     @Size(max = 20)
     @Column(name = "nombre_usuario")
-    private String nombreUsuario;
+    private String username;
 
     @NotBlank
     @Size(max = 50)
@@ -42,7 +42,7 @@ public class Usuario {
 
     @NotBlank
     @Size(max = 120)
-    private String contrasenia;
+    private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "usuario_rol",
@@ -52,13 +52,12 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Set<DefinicionActividad> actividades;
+    private Set<Actividad> actividades;
 
-    public Usuario(String nombreUsuario, String email, String contrasenia) {
+    public Usuario(String username, String email, String password) {
 
-        this.nombreUsuario = nombreUsuario;
+        this.username = username;
         this.email = email;
-        this.contrasenia = contrasenia;
-
+        this.password = password;
     }
 }

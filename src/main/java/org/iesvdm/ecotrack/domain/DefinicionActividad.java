@@ -24,11 +24,7 @@ public class DefinicionActividad {
 
     private Double factorDeEmisionCombustible;
     private String unidadFactorDeEmision;
-
-    @ManyToOne
-    @JsonIgnore
-    @ToString.Exclude
-    private Rol rol;
+    private String emision; //es el string que se muestra de la emisión, por ejemplo 14.23 L/km
 
     @OneToMany(mappedBy = "definicionActividad")
     private Set<Actividad> actividades;

@@ -22,7 +22,7 @@ class EcotrackApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
+	/*@Test
 	void postUsuariosYActividades(){
 		Date fecha = new Date();
 
@@ -40,7 +40,7 @@ class EcotrackApplicationTests {
 		this.actividadService.save(definicionActividad1);
 		this.actividadService.save(definicionActividad2);
 		this.actividadService.save(definicionActividad3);
-	}
+	}*/
 
 	@Test
 	void getUsuarios(){

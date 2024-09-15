@@ -19,5 +19,5 @@ public class GraficoDeEstadisticas {
     private long id;
 
     @OneToMany(mappedBy = "graficoDeEstadisticas")
-    private List<DefinicionActividad> actividades;
+    private List<Actividad> actividades;
 }

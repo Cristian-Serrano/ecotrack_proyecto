@@ -14,6 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Builder
 public class DefinicionActividad {
+    //tipo de actividad
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

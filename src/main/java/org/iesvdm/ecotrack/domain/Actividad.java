@@ -20,6 +20,7 @@ public class Actividad {
     @EqualsAndHashCode.Include
     private long id;
 
+
     private Double combustibleUtilizado;
     private Date fecha;
 
